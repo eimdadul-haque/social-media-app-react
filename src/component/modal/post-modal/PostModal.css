@@ -1,0 +1,24 @@
+.post-modal-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-cus {
+  height: 200px;
+}
+
+.form-cus .form-control {
+  height: 100%;
+}
+
+.btn-sb-con {
+  margin: 0px 20px 20px 20px;
+}
+
+.add-to-post {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -18,7 +18,7 @@ export default function Navbar() {
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
-                <div className="nav-ul">
+                <div className="nav-ul main-icom-container">
                     <div className="icon-container-main">
                         <i className="fa-solid fa-house"></i>
                     </div>
@@ -31,7 +31,7 @@ export default function Navbar() {
                         <i className="fa-solid fa-file-video"></i>
                     </div>
                 </div>
-                <div className="nav-ul">
+                <div className="nav-ul main-icom-container-two">
                     <div className="icon-container-name">
                         <img src={Img} />
                         <span>Eimdadul</span>
@@ -45,6 +45,9 @@ export default function Navbar() {
                     <div className="icon-container">
                         <i className="fa-solid fa-caret-down"></i>
                     </div>
+                </div>
+                <div className="barger-btn">
+                    <i className="fa-solid fa-bars"></i>
                 </div>
             </nav>
         </>
