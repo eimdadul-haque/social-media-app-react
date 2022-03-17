@@ -1,0 +1,74 @@
+.shortcuts-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  background-color: #f8f8f8;
+  height: 90vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.short-list-header {
+  padding-left: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 99%;
+  height: 40px;
+  margin: 10px 0 10px 0;
+}
+
+.short-list-header:hover {
+  background-color: rgb(204, 202, 202);
+}
+
+.short-list-header span {
+  margin-left: 10px;
+}
+
+.short-list-header img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.divider {
+  padding-left: 10px;
+  width: 95%;
+  border-top: 1px solid rgb(204, 204, 204);
+}
+
+.short-group-list-container {
+  padding-left: 10px;
+  width: 95%;
+  border-top: 1px solid rgb(223, 223, 223);
+}
+
+.short-group-list-container h6{
+  margin-top: 10px;
+} 
+
+.short-group-list {
+  margin-top: 20px;
+}
+
+.short-group-list img {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.short-group-list span{
+  margin-left: 10px;
+  font-weight: 600;
+}
