@@ -91,7 +91,7 @@ export default function Profile(params) {
                     </div>
                 </div>
                 <div className="col-7 m-0 p-0">
-                    <div className="info-container">
+                    <div className="info-container overflow-scroll">
                         <Post_input />
                         <PostCard />
                     </div>

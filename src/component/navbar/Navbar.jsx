@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Img from "../../asset/003.jpg";
 import Logo from "../../asset/logo.png";
 import { Badge } from "@mui/material"
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -19,9 +20,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="nav-ul main-icom-container">
-                    <div className="icon-container-main">
+                    <Link to="/" className="icon-container-main">
                         <i className="fa-solid fa-house"></i>
-                    </div>
+                    </Link>
                     <div className="icon-container-main">
                         <Badge badgeContent={4} color="error">
                             <i className="fa-solid fa-user-group"></i>
@@ -34,7 +35,9 @@ export default function Navbar() {
                 <div className="nav-ul main-icom-container-two">
                     <div className="icon-container-name">
                         <img src={Img} />
-                        <span>Eimdadul</span>
+                        <Link to='/profile' className="toProfile">
+                            <span>Eimdadul</span>
+                        </Link>
                     </div>
                     <div className="icon-container">
                         <i className="fa-solid fa-message"></i>
