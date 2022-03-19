@@ -6,16 +6,17 @@ import PostCard from '../post-card/PostCard';
 import ActiveList from '../active-list/ActiveList';
 import DayComponent from '../day/DayComponent';
 import Shortcuts from '../shortcuts/Shortcuts';
+import Post_Day_Post_Input from '../post-day-post-input/Post_Day_Post_Input';
 
 export default function () {
     return (
-        <div className='container-fluid' style={{ height: "90vh" }}>
+        <div className='container-fluid' >
             <div className='row row-cus'>
                 <div className='col-3 p-0 m-0'>
                     <Shortcuts />
                 </div>
                 <div className='col-6'>
-                    <PostCard />
+                    <Post_Day_Post_Input />
                 </div>
                 <div className='col-3 p-0'>
                     <ActiveList />

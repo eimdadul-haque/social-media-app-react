@@ -15,7 +15,7 @@ export default function Post_input() {
 
     return (
         <>
-            <div className=' post-container '>
+            <div className='post-container '>
                 <div className='write-post-container border'>
                     <div className='write-post'>
                         <img src={Img} />

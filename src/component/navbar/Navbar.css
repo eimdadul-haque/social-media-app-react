@@ -69,7 +69,6 @@
   margin: 0 5px 0 5px;
   height: 40px;
   width: 130px;
-  background-color: #4d525d;
   border-radius: 50px;
   display: flex;
   justify-content: space-between;
@@ -78,9 +77,14 @@
   padding-right: 15px;
 }
 
+.icon-container-name:hover {
+  background-color: #4d525d;
+}
+
 .icon-container-name img {
-  height: 100%;
-  width: 40px;
+  margin-left: 4px;
+  height: 35px;
+  width: 35px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -103,7 +107,7 @@
   width: 100%;
 }
 
-.barger-btn{
+.barger-btn {
   display: none;
 }
 
@@ -118,14 +122,12 @@
     display: none;
   }
 
-  .main-icom-container-two{
+  .main-icom-container-two {
     display: none;
   }
 
-  .barger-btn{
+  .barger-btn {
     background-color: aquamarine;
     color: white;
   }
 }
-
-

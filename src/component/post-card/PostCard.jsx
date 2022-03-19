@@ -6,9 +6,7 @@ import DayComponent from "../day/DayComponent";
 
 export default function PostCard() {
     return (
-        <div className="post-scroll pt-3">
-            <DayComponent />
-            <Post_input />
+        <div className="post-scroll">
             {
                 [...Array(40).keys()].map(x =>
                     <div className="card-container">

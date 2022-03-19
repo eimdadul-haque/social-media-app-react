@@ -8,7 +8,7 @@
   overflow-y: scroll;
 }
 
-.list-container h1{
+.list-container h1 {
   width: 92%;
   border-bottom: 1px solid rgb(199, 199, 199);
 }
@@ -46,11 +46,12 @@
   align-items: center;
 }
 
-.pro-img-name  span{
+.pro-img-name span {
   margin-left: 10px;
-  font-weight: 500.;
+  font-weight: 500;
 }
 .pro-img-container {
+  position: relative;
   height: 40px;
   width: 40px;
 }
@@ -60,4 +61,14 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.active-dot {
+  right: 0;
+  top: 70%;
+  border-radius: 50%;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: rgb(25, 167, 25);
 }

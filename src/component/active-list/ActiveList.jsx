@@ -21,6 +21,7 @@ export default function ActiveList() {
                     <div className="pro-img-name mt-2">
                         <div className="pro-img-container">
                             <img src={Img} />
+                            <div className="active-dot"></div>
                         </div>
                         <span>Eimdadul</span>
                     </div>

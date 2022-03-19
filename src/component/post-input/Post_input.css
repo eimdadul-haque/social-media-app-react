@@ -1,6 +1,5 @@
 .post-container {
-  padding-left: 50px;
-  padding-right: 50px;
+  width: 100%;
 }
 .write-post-container {
   background-color: #f8f8f8;
