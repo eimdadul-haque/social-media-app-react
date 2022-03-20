@@ -18,8 +18,8 @@ function App() {
             <Route exact path='/profile' element={< Profile />} />
             <Route exact path='/login' element={< Log_In />} />
           </Routes>
+          <Dropdown_menu />
         </Router>
-        <Dropdown_menu />
       </div>
     </ContextProvider >
   );
