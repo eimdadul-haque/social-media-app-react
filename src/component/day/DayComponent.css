@@ -9,7 +9,7 @@
 
 .day-img-container {
   height: 220px;
-  width: 130px;
+  width: 110px;
   margin: 0 5px 0 5px;
   position: relative;
 }
@@ -45,12 +45,12 @@
 }
 
 .day-img-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .rignt-arrow {
   position: absolute;
-  right: 0px;
+  right: 10px;
   color: white;
   display: flex;
   justify-content: center;

@@ -1,0 +1,78 @@
+.drop-down-container {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  border: 1px solid rgb(148, 148, 148);
+  border-radius: 8px;
+  background-color:  #302f35;
+  width: 300px;
+  padding: 10px;
+}
+
+.drop-pro {
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+
+.drop-pro:hover {
+  background-color: rgb(99, 99, 99);
+}
+
+.drop-pro img {
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.drop-pro span {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.divider {
+  margin: 10px 0 20px 0;
+  width: 100%;
+  border-bottom: 1px solid rgb(83, 83, 83);
+}
+
+.drop-normal {
+  margin-top: 10px;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+.drop-normal:hover {
+  background-color: rgb(99, 99, 99);
+}
+
+.drop-normal div {
+  border-radius: 50%;
+  background-color: rgb(54, 54, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.drop-normal span {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}

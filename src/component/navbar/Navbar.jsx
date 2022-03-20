@@ -1,12 +1,15 @@
 import "./Navbar.css";
-import React from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Img from "../../asset/003.jpg";
 import Logo from "../../asset/logo.png";
 import { Badge } from "@mui/material"
 import { Link } from "react-router-dom";
+import { Context } from "../../help/Context";
 
 export default function Navbar() {
+
+    const { dropdown, setDropdown } = useContext(Context);
     return (
         <>
             <nav className="nav" >
@@ -45,7 +48,7 @@ export default function Navbar() {
                     <div className="icon-container">
                         <i className="fa-solid fa-bell"></i>
                     </div>
-                    <div className="icon-container">
+                    <div onClick={() => setDropdown(!dropdown)} className="icon-container" >
                         <i className="fa-solid fa-caret-down"></i>
                     </div>
                 </div>

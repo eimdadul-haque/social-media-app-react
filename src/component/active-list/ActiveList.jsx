@@ -18,7 +18,7 @@ export default function ActiveList() {
             <h1></h1>
             {
                 [...Array(400).keys()].map((x) =>
-                    <div className="pro-img-name mt-2">
+                    <div key={x} className="pro-img-name mt-2">
                         <div className="pro-img-container">
                             <img src={Img} />
                             <div className="active-dot"></div>
