@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Img from "../../asset/003.jpg"
 import Post_input from "../../component/post-input/Post_input";
 import PostCard from "../../component/post-card/PostCard";
 import "./Profile.css"
+import { API_LINK } from "../../api/API_LINK";
+import axios from "axios";
+
 export default function Profile(params) {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        axios.get(API_LINK.GET_POST_BY_USER, {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        })
+            .then(res => {
+                setPosts(res.data);
+            })
+            .catch(err => console.log())
+    }, [])
+
     return (
         <>
             <div className="profile-container">
@@ -55,7 +71,6 @@ export default function Profile(params) {
                             <div className="photo-cluster">
                                 {
                                     [...Array(9).keys()].map(x => {
-                                        console.log(x, "====")
                                         if (x == 0) {
                                             return <img src={Img} style={{ borderTopLeftRadius: "10px" }} />
                                         } else if (x == 2) {
@@ -93,7 +108,14 @@ export default function Profile(params) {
                 <div className="col-7 m-0 p-0">
                     <div className="info-container overflow-scroll">
                         <Post_input />
-                        <PostCard />
+                        {
+                            posts.map((data, index) => {
+                                return (
+                                    <PostCard data={data} />
+                                )
+                            })
+                        }
+                    
                     </div>
                 </div>
             </div>

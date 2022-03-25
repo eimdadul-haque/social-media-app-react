@@ -15,7 +15,7 @@ export default function () {
                 <div className='col-3 p-0 m-0'>
                     <Shortcuts />
                 </div>
-                <div className='col-6'>
+                <div className='col-6 '>
                     <Post_Day_Post_Input />
                 </div>
                 <div className='col-3 p-0'>

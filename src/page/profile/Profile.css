@@ -171,17 +171,11 @@
   margin-bottom: 20px;
 }
 .photo-cluster img {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   margin: 1px;
   object-fit: cover;
 }
-
-
-
-
-
-
 
 .info-friend-container {
   width: 100%;
@@ -208,8 +202,8 @@
 
 .friend-cluster div img {
   border-radius: 10px;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   margin: 1px;
   object-fit: cover;
 }

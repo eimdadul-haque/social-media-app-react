@@ -1,0 +1,33 @@
+.container-fluid {
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.post-detail-container {
+  width: 100%;
+  height: 100%;
+
+}
+
+.post-detail-photo-container {
+  width: 100%;
+
+}
+
+.post-detail-photo-container img{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.post-detail-desc-container{
+  margin: 20px 0 20px 0;
+  width: 100%;
+  text-align: justify;
+
+}

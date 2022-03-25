@@ -1,0 +1,53 @@
+.comment-container {
+  width: 100%;
+}
+
+.comment-input-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.comment-input-container textarea {
+  width: 100%;
+}
+
+.comment-input-container button {
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 30%;
+  background-color: #00a1ff;
+  border: 1px solid rgb(214, 210, 202);
+}
+
+:focus {
+  outline: none;
+}
+
+/*Comment Massage*/
+
+.cmt-msg-container {
+  margin: 10px 0 0px 0;
+  width: 100%;
+}
+
+.cmt {
+  border-radius: 5px;
+  padding: 5px;
+  border: solid rgb(199, 199, 199) 1px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.cmter-pic {
+  height: 40px;
+  width: 40px;
+  background-color: aqua;
+  border-radius: 50px;
+}
+
+.cmt-msg-container span {
+  margin-left: 10px;
+}

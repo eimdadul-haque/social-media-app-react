@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 10px;
+  margin-top: 5px;
   position: relative;
 }
 
 .day-img-container {
   height: 220px;
-  width: 110px;
+  width: 120px;
   margin: 0 5px 0 5px;
   position: relative;
 }
@@ -50,7 +50,7 @@
 
 .rignt-arrow {
   position: absolute;
-  right: 10px;
+  right: 0px;
   color: white;
   display: flex;
   justify-content: center;
