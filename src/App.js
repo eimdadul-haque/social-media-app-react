@@ -28,7 +28,7 @@ function App() {
               <Route exact path='/login' element={< Log_In />} />
               <Route exact path='/signup' element={<Sign_Up />} />
               <Route exact path='/post/:id' element={<Post />} />
-              <Route exact path='/chat' element={<MassagePage />} />
+              <Route exact path='/chat/:connectionId' element={<MassagePage />} />
             </Routes>
             <Dropdown_menu />
           </Router>

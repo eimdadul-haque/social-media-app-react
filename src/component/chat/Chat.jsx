@@ -3,37 +3,13 @@ import Message from '../message/Message';
 import "./Chat.css"
 import MessageInput from '../message-input/MessageInput';
 import axios from 'axios';
-import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr"
+import { useParams } from "react-router-dom";
 
 export default function () {
   const [messages, setMessages] = useState([]);
-  const [conn, setConn] = useState([] );
-  let con = []
-
-  let connection;
-  useEffect(() => {
-    connection = new HubConnectionBuilder()
-      .withUrl("http://localhost:5200/chat")
-      .configureLogging(LogLevel.Information)
-      .build();
-
-    connection.start().catch(err => console.log(err, "===err"));
-
-    connection.on("chat", function (msg) {
-      setMessages(messages => [...messages, msg])
-    });
-
-    connection.on("Connecteduser", function (id) {
-      con.push(id);
-      setConn(con);
-      console.log(con, "====is");
-    });
-
-    connection.invoke("")
-  }, [])
-
+  const param = useParams(); 
   return (
-    <> 
+    <>
       <div className='msg-list'>
         {
           messages.map((data, index) =>
@@ -45,7 +21,7 @@ export default function () {
           )
         }
       </div>
-      <MessageInput connection={connection} />
+      <MessageInput />
     </>
   )
 }

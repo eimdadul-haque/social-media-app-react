@@ -46,7 +46,7 @@ export default function PostCard({ data }) {
                                 <i className="fa-solid fa-comment"></i>
                             </div>
                             <div>
-                                <i class="fa-solid fa-share"></i>
+                                <i className="fa-solid fa-share"></i>
                             </div>
                         </div>
                     </div>

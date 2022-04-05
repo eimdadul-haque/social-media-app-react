@@ -26,7 +26,7 @@ export default function Post_input() {
                     <h1></h1>
                     <div className='post-icon-container'>
                         <div>
-                            <i class="fa-solid fa-video"></i>
+                            <i className="fa-solid fa-video"></i>
                         </div>
                         <div>
                             <i className="fa-solid fa-photo-film"></i>

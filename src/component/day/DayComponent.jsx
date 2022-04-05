@@ -13,12 +13,12 @@ export default function DayComponent() {
             </div>
             {
                 [...Array(4).keys()].map((x,index) =>
-                    <>
-                        <div key={index} className='day-img-container'>
+                    <div key={index}>
+                        <div  className='day-img-container'>
                             <img src={Img} className="day-pro-img" />
                             <img src={Img} />
                         </div>
-                    </>
+                    </div>
                 )
             }
             <div className='rignt-arrow'>
