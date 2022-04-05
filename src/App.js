@@ -10,8 +10,12 @@ import Sign_Up from './page/account/Sign_Up';
 import Post from './page/post/Post';
 import { Provider } from 'react-redux';
 import { Store } from "./redux/store/Store";
+import MassagePage from "./page/massage-page/MassagePage";
+import Pop_Up_Message from './component/pop-up-message/Pop_Up_Message';
+import { LogLevel, HubConnectionBuilder } from "@microsoft/signalr";
 
 function App() {
+
   return (
     <Provider store={Store}>
       <ContextProvider>
@@ -24,6 +28,7 @@ function App() {
               <Route exact path='/login' element={< Log_In />} />
               <Route exact path='/signup' element={<Sign_Up />} />
               <Route exact path='/post/:id' element={<Post />} />
+              <Route exact path='/chat' element={<MassagePage />} />
             </Routes>
             <Dropdown_menu />
           </Router>

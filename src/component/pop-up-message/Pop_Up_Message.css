@@ -1,0 +1,19 @@
+.pop-up-msg {
+    position: absolute;
+    right: 10px;
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 8px;
+    background-color: #302f35;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    top: 220px;
+}
+
+.pop-up-msg div {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: white;
+}

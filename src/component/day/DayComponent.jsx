@@ -12,9 +12,9 @@ export default function DayComponent() {
                 <img src={Img} />
             </div>
             {
-                [...Array(4).keys()].map(x =>
+                [...Array(4).keys()].map((x,index) =>
                     <>
-                        <div className='day-img-container'>
+                        <div key={index} className='day-img-container'>
                             <img src={Img} className="day-pro-img" />
                             <img src={Img} />
                         </div>
