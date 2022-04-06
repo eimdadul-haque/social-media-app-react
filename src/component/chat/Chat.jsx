@@ -4,10 +4,13 @@ import "./Chat.css"
 import MessageInput from '../message-input/MessageInput';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
+import { SignalRClient } from "../../help/SignalrClient";
 
 export default function () {
   const [messages, setMessages] = useState([]);
-  const param = useParams(); 
+  const connection = SignalRClient();
+  connection.on();
+  const param = useParams();
   return (
     <>
       <div className='msg-list'>
@@ -21,7 +24,7 @@ export default function () {
           )
         }
       </div>
-      <MessageInput />
+      <MessageInput connection={connection}  id={param.connectionId}/>
     </>
   )
 }

@@ -3,21 +3,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import Img from "../../asset/003.jpg";
 import { Context } from "../../help/Context";
 import { useNavigate } from "react-router-dom";
-import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { SignalRClient } from "../../help/SignalrClient";
+import axios from "axios";
 
 export default function ActiveList() {
 
     const [Connected, setConnected] = useState([]);
+    let act = []
     useEffect(() => {
-        let connection = new HubConnectionBuilder()
-            .withUrl("http://localhost:5200/chat")
-            .configureLogging(LogLevel.Information)
-            .build();
-        connection.start().catch(err => console.log(err));
-        connection.on("Connecteduser", function (ConnectionId) {
-            setConnected(Connected => [...Connected, ConnectionId])
+        let connection = SignalRClient();
+        connection.on("Active", (id, name) => {
+            setConnected(Connected=> [...Connected, {id, name}])
         });
     }, [])
+
+console.log(Connected,"====Connected");
+
 
     // const { PopUpMsg, setPopUpMsg } = useContext(Context);
     const navigate = useNavigate();
@@ -40,13 +41,13 @@ export default function ActiveList() {
             </div>
             <h1></h1>
             {
-                Connected.map((ConnectionId, index) =>
-                    <div key={index} onClick={() => msgPage(ConnectionId)} className="pro-img-name mt-2">
+               Connected.map((data, index) =>
+                    <div key={index} onClick={() => msgPage(data.id)} className="pro-img-name mt-2">
                         <div className="pro-img-container">
                             <img src={Img} />
                             <div className="active-dot"></div>
                         </div>
-                        <span>Connection {index + 1}</span>
+                        <span>{data.name} {index + 1}</span>
                     </div>
                 )
             }

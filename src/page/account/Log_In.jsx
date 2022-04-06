@@ -29,7 +29,8 @@ export default function Log_In() {
       ...info
     })
       .then(res => {
-        localStorage.setItem("token","Bearer " +res.data.token);
+        localStorage.setItem("token", "Bearer " + res.data.token);
+        localStorage.setItem("tokenR", res.data.token);
         navigate("/");
       })
       .catch(err => console.log(err))
