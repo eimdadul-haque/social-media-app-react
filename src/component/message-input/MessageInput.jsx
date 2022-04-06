@@ -5,8 +5,7 @@ import "./MessageInput.css"
 export default function ({ connection, id }) {
     const [Message, setMessage] = useState("");
     const sendMessage = (msg, id) => {
-        connection.invoke("sendMessageToUser", id, msg)
-        console.log(connection, msg, id,"=====skhdf");
+        connection.invoke("sendMessageToUser", id, msg).catch(err=>console.log(err));
     }
     return (
         <div className='form-group'>

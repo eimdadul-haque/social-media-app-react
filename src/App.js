@@ -13,9 +13,9 @@ import { Store } from "./redux/store/Store";
 import MassagePage from "./page/massage-page/MassagePage";
 import Pop_Up_Message from './component/pop-up-message/Pop_Up_Message';
 import { LogLevel, HubConnectionBuilder } from "@microsoft/signalr";
+import PrivateRoute from './private-route/PrivateRoute';
 
 function App() {
-
   return (
     <Provider store={Store}>
       <ContextProvider>
@@ -23,12 +23,12 @@ function App() {
           <Router>
             <Navbar />
             <Routes>
-              <Route exact path='/' element={< HomeContainer />} />
-              <Route exact path='/profile' element={< Profile />} />
+              <Route exact path='/' element={<PrivateRoute>< HomeContainer /></PrivateRoute>} />
+              <Route exact path='/profile' element={<PrivateRoute>< Profile /></PrivateRoute>} />
               <Route exact path='/login' element={< Log_In />} />
               <Route exact path='/signup' element={<Sign_Up />} />
-              <Route exact path='/post/:id' element={<Post />} />
-              <Route exact path='/chat/:connectionId' element={<MassagePage />} />
+              <Route exact path='/post/:id' element={<PrivateRoute><Post /></PrivateRoute>} />
+              <Route exact path='/chat/:connectionId' element={<PrivateRoute><MassagePage /></PrivateRoute>} />
             </Routes>
             <Dropdown_menu />
           </Router>

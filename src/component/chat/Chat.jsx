@@ -9,22 +9,24 @@ import { SignalRClient } from "../../help/SignalrClient";
 export default function () {
   const [messages, setMessages] = useState([]);
   const connection = SignalRClient();
-  connection.on();
+  useEffect(() => {
+    connection.on("ToId", (name, msg) => {
+      setMessages(messages => [...messages, { name, msg }])
+    });
+  }, []);
   const param = useParams();
   return (
     <>
       <div className='msg-list'>
         {
           messages.map((data, index) =>
-            <div key={index} className={data.name === "Eimdadul" ? "send" : "rec"}>
-              <div  >
-                <div>{data}</div>
-              </div>
+            <div key={index} className={data.name === "eimdadul@gmail.com" ? "send" : "rec"}>
+                <div>{data.msg}</div>
             </div>
           )
         }
       </div>
-      <MessageInput connection={connection}  id={param.connectionId}/>
+      <MessageInput connection={connection} id={param.connectionId} />
     </>
   )
 }

@@ -17,7 +17,6 @@ export default function ActiveList() {
         });
     }, [])
 
-console.log(Connected,"====Connected");
 
 
     // const { PopUpMsg, setPopUpMsg } = useContext(Context);
