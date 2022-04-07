@@ -7,6 +7,6 @@ export function SignalRClient() {
         })
         .configureLogging(LogLevel.Information)
         .build();
-        connection.start().catch(err => console.log(err))
+    connection.start().catch(err => console.log(err))
     return connection;
 }

@@ -4,11 +4,11 @@ import "./Chat.css"
 import MessageInput from '../message-input/MessageInput';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import { SignalRClient } from "../../help/SignalrClient";
+import { useSelector } from 'react-redux';
 
 export default function () {
+  const { connection } = useSelector(state => state.ConnectionStore);
   const [messages, setMessages] = useState([]);
-  const connection = SignalRClient();
   useEffect(() => {
     connection.on("ToId", (name, msg) => {
       setMessages(messages => [...messages, { name, msg }])
@@ -21,7 +21,7 @@ export default function () {
         {
           messages.map((data, index) =>
             <div key={index} className={data.name === "eimdadul@gmail.com" ? "send" : "rec"}>
-                <div>{data.msg}</div>
+              <div>{data.msg}</div>
             </div>
           )
         }

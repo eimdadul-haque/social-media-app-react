@@ -5,15 +5,19 @@ import { Context } from "../../help/Context";
 import { useNavigate } from "react-router-dom";
 import { SignalRClient } from "../../help/SignalrClient";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { ConnectionAction } from "../../redux/action/ConnectionAction";
 
 export default function ActiveList() {
 
+    const dispatch = useDispatch();
     const [Connected, setConnected] = useState([]);
     let act = []
     useEffect(() => {
         let connection = SignalRClient();
         connection.on("Active", (id, name) => {
-            setConnected(Connected=> [...Connected, {id, name}])
+            setConnected(Connected => [...Connected, { id, name }])
+            dispatch(ConnectionAction(connection))
         });
     }, [])
 
@@ -40,7 +44,7 @@ export default function ActiveList() {
             </div>
             <h1></h1>
             {
-               Connected.map((data, index) =>
+                Connected.map((data, index) =>
                     <div key={index} onClick={() => msgPage(data.id)} className="pro-img-name mt-2">
                         <div className="pro-img-container">
                             <img src={Img} />
