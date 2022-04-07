@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 export default function () {
   const { connection } = useSelector(state => state.ConnectionStore);
+  console.log(connection,"====connection");
   const [messages, setMessages] = useState([]);
   useEffect(() => {
     connection.on("ToId", (name, msg) => {

@@ -31,6 +31,7 @@ export default function Log_In() {
       .then(res => {
         localStorage.setItem("token", "Bearer " + res.data.token);
         localStorage.setItem("tokenR", res.data.token);
+        localStorage.setItem("userName", res.data.userName);
         navigate("/");
       })
       .catch(err => console.log(err))

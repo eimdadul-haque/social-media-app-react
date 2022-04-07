@@ -16,12 +16,18 @@ export default function ActiveList() {
     useEffect(() => {
         let connection = SignalRClient();
         connection.on("Active", (id, name) => {
-            setConnected(Connected => [...Connected, { id, name }])
-            dispatch(ConnectionAction(connection))
+            if (localStorage.getItem("userName") !== name) {
+                console.log(localStorage.getItem("userName"), "=====kisf");
+                setConnected(Connected => [...Connected, { id, name }])
+            }
         });
+
+        connection.on("InActive", (id, name) => {
+            setConnected(Connected.filter(x => x.id !== id))
+        });
+
+        dispatch(ConnectionAction(connection))
     }, [])
-
-
 
     // const { PopUpMsg, setPopUpMsg } = useContext(Context);
     const navigate = useNavigate();
