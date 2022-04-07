@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import "./MessageInput.css"
+import "./MessageInput.css";
 
 export default function ({ connection, id }) {
     const [Message, setMessage] = useState("");
     const sendMessage = (msg, id) => {
-        connection.invoke("sendMessageToUser", id, msg).catch(err=>console.log(err));
+        console.log(connection,"====conn");
+        connection.invoke("sendMessageToUser", id,localStorage.getItem("userName"), msg).catch(err=>console.log(err));
     }
     return (
         <div className='form-group'>

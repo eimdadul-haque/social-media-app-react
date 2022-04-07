@@ -5,14 +5,16 @@ import { Context } from "../../help/Context";
 import { useNavigate } from "react-router-dom";
 import { SignalRClient } from "../../help/SignalrClient";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ConnectionAction } from "../../redux/action/ConnectionAction";
+import { MessageAction } from "../../redux/action/MessageAction";
+import { MesageNotifyAction } from "../../redux/action/MesageNotifyAction";
 
 export default function ActiveList() {
 
     const dispatch = useDispatch();
     const [Connected, setConnected] = useState([]);
-    let act = []
+
     useEffect(() => {
         let connection = SignalRClient();
         connection.on("Active", (id, name) => {
@@ -24,6 +26,12 @@ export default function ActiveList() {
 
         connection.on("InActive", (id, name) => {
             setConnected(Connected.filter(x => x.id !== id))
+        });
+
+        connection.on("ToId", (name, msg) => {
+            console.log(msg,"====msg");
+            dispatch(MessageAction({ name, msg }));
+            dispatch(MesageNotifyAction({ name, msg }));
         });
 
         dispatch(ConnectionAction(connection))

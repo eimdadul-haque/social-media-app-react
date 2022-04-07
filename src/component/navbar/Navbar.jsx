@@ -1,15 +1,21 @@
 import "./Navbar.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Img from "../../asset/003.jpg";
 import Logo from "../../asset/logo.png";
 import { Badge } from "@mui/material"
 import { Link } from "react-router-dom";
 import { Context } from "../../help/Context";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
-
+    const { notify } = useSelector(state => state.MessageNotifyStore)
     const { dropdown, setDropdown } = useContext(Context);
+
+    useEffect(() => {
+        console.log(notify, "===notify");
+    }, [notify])
+
     return (
         <>
             <nav className="nav" >
@@ -42,8 +48,10 @@ export default function Navbar() {
                             <span>Eimdadul</span>
                         </Link>
                     </div>
-                    <div className="icon-container">
-                        <i className="fa-solid fa-message"></i>
+                    <div className="icon-container-main">
+                        <Badge badgeContent={notify.length} color="error">
+                            <i className="fa-solid fa-message"></i>
+                        </Badge>
                     </div>
                     <div className="icon-container">
                         <i className="fa-solid fa-bell"></i>

@@ -1,4 +1,6 @@
 
 export const ActionTypes = {
-    RELODE: "RELODE"
+    RELODE: "RELODE",
+    MESSAGE: "MESSAGE",
+    NOTIFICATION: "NOTIFICATION"
 }
