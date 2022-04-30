@@ -44,7 +44,7 @@ export default function Post() {
     }
     return (
         <div className='container mt-2'>
-            <div className='row'>
+            <div className='row post-row'>
                 <div className='col-8 p-0'>
                     <div className='post-detail-container'>
                         <div className='post-detail-photo-container'>

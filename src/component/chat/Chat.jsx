@@ -5,28 +5,39 @@ import MessageInput from '../message-input/MessageInput';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { API_LINK } from '../../api/API_LINK';
 
 export default function () {
   const { connection } = useSelector(state => state.ConnectionStore);
   const { messages } = useSelector(state => state.MessageStore);
+  const { info } = useSelector(state => state.UserInfoStore);
+  const [message, setmessage] = useState([])
 
   useEffect(() => {
-    console.log(messages,"===messages");
-  }, [messages]);
+    axios.get(API_LINK.GET_MESSAGE + `?sender=${localStorage.getItem("userName")}&receiver=${info.name}`, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    })
+      .then(res => {
+        console.log(res.data,"====res.data");
+        setmessage(messages || res.data)
+      })
+      .catch(err => console.log(err, "get msg err"))
+  }, [messages, info]);
 
-  const param = useParams();
   return (
     <>
       <div className='msg-list'>
         {
-          messages.map((data, index) =>
-            <div key={index} className={data.name === "eimdadul@gmail.com" ? "send" : "rec"}>
+          message.map((data, index) =>
+            <div key={index} className={data.name === localStorage.getItem("userName") ? "send" : "rec"}>
               <div>{data.msg}</div>
             </div>
           )
         }
       </div>
-      <MessageInput connection={connection} id={param.connectionId} />
+      <MessageInput connection={connection} id={info.id} />
     </>
   )
 }

@@ -1,7 +1,5 @@
 import { ActionTypes } from "../ActionType"
 
-
-
 export const Relode = (state = { count: 0 }, action) => {
     switch (action.type) {
         case ActionTypes.RELODE:
@@ -10,7 +8,6 @@ export const Relode = (state = { count: 0 }, action) => {
             return state;
     }
 }
-
 
 export const Connection = (state = { connection: {} }, action) => {
     switch (action.type) {
@@ -21,7 +18,6 @@ export const Connection = (state = { connection: {} }, action) => {
     }
 }
 
-
 export const Message = (state = { messages: [] }, action) => {
     switch (action.type) {
         case ActionTypes.MESSAGE:
@@ -31,11 +27,19 @@ export const Message = (state = { messages: [] }, action) => {
     }
 }
 
-
 export const MessageNotify = (state = { notify: [] }, action) => {
     switch (action.type) {
         case "NOTI":
             return { ...state, notify: state.notify.concat(action.payload) }
+        default:
+            return state;
+    }
+}
+
+export const UserInfo = (state = { info: {} }, action) => {
+    switch (action.type) {
+        case "USER_INFO":
+            return { ...state, info: action.payload }
         default:
             return state;
     }

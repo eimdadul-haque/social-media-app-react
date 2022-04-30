@@ -5,7 +5,7 @@ import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
 
 export default function MassagePage() {
     return (
-        <div className='row'>
+        <div className='row message-page'>
             <div className='col-6'>
                 <Chat />
             </div>

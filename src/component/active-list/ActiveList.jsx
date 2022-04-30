@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { ConnectionAction } from "../../redux/action/ConnectionAction";
 import { MessageAction } from "../../redux/action/MessageAction";
 import { MesageNotifyAction } from "../../redux/action/MesageNotifyAction";
+import { UserInfoAction } from "../../redux/action/UserInfoAction";
+import { API_LINK } from "../../api/API_LINK";
 
 export default function ActiveList() {
 
@@ -29,9 +31,23 @@ export default function ActiveList() {
         });
 
         connection.on("ToId", (name, msg) => {
-            console.log(msg,"====msg");
+            console.log(msg, "====msg");
             dispatch(MessageAction({ name, msg }));
             dispatch(MesageNotifyAction({ name, msg }));
+
+            axios.post(API_LINK.SEND_MESSAGE, {
+                msgBody: msg,
+                sender: name,
+                receiver: localStorage.getItem("userName")
+            }, {
+                headers: {
+                    Authorization: localStorage.getItem("token")
+                }
+            })
+                .then(res => {
+
+                })
+                .catch(err => console.log(err, "send error"));
         });
 
         dispatch(ConnectionAction(connection))
@@ -39,8 +55,9 @@ export default function ActiveList() {
 
     // const { PopUpMsg, setPopUpMsg } = useContext(Context);
     const navigate = useNavigate();
-    const msgPage = (id) => {
-        navigate("/chat/" + id);
+    const msgPage = (data) => {
+        navigate("/chat/");
+        dispatch(UserInfoAction(data));
     }
 
     return (
@@ -59,7 +76,7 @@ export default function ActiveList() {
             <h1></h1>
             {
                 Connected.map((data, index) =>
-                    <div key={index} onClick={() => msgPage(data.id)} className="pro-img-name mt-2">
+                    <div key={index} onClick={() => msgPage(data)} className="pro-img-name mt-2">
                         <div className="pro-img-container">
                             <img src={Img} />
                             <div className="active-dot"></div>

@@ -53,10 +53,10 @@ export default function Navbar() {
                             <i className="fa-solid fa-message"></i>
                         </Badge>
                     </div>
-                    <div className="icon-container">
+                    <div className="icon-container-main">
                         <i className="fa-solid fa-bell"></i>
                     </div>
-                    <div onClick={() => setDropdown(!dropdown)} className="icon-container" >
+                    <div onClick={() => setDropdown(!dropdown)} className="icon-container-main" >
                         <i className="fa-solid fa-caret-down"></i>
                     </div>
                 </div>

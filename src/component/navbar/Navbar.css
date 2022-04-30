@@ -41,13 +41,13 @@
 .icon-container-main {
   text-decoration: none;
   height: 40px;
-  width: 60px;
+  width: 40px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 5px 0 5px;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .icon-container-main:hover {
@@ -55,17 +55,22 @@
 }
 
 .icon-container {
-  margin: 0 5px 0 5px;
+  text-decoration: none;
   height: 40px;
   width: 40px;
-  background-color: #4d525d;
-  border-radius: 50%;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  margin: 0 5px 0 5px;
+  border-radius: 50%;
+  background-color: #3e424b;
+
 }
 
+.icon-container:hover{
+  background-color: #4d525d;
+}
 .icon-container-name {
   text-decoration: none;
   margin: 0 5px 0 5px;
