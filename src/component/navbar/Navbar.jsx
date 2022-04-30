@@ -42,12 +42,16 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="nav-ul main-icom-container-two">
-                    <div className="icon-container-name">
-                        <img src={Img} />
-                        <Link to='/profile' className="toProfile">
-                            <span>Eimdadul</span>
-                        </Link>
-                    </div>
+                    {
+                        localStorage.getItem("token") ? <>
+                            <div className="icon-container-name">
+                                <img src={Img} />
+                                <Link to='/profile' className="toProfile">
+                                    <span>Eimdadul</span>
+                                </Link>
+                            </div>
+                        </> : <></>
+                    }
                     <div className="icon-container-main">
                         <Badge badgeContent={notify.length} color="error">
                             <i className="fa-solid fa-message"></i>

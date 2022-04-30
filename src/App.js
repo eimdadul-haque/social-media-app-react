@@ -11,8 +11,6 @@ import Post from './page/post/Post';
 import { Provider } from 'react-redux';
 import { Store } from "./redux/store/Store";
 import MassagePage from "./page/massage-page/MassagePage";
-import Pop_Up_Message from './component/pop-up-message/Pop_Up_Message';
-import { LogLevel, HubConnectionBuilder } from "@microsoft/signalr";
 import PrivateRoute from './private-route/PrivateRoute';
 
 function App() {
@@ -21,7 +19,6 @@ function App() {
       <ContextProvider>
         <div className='app'>
           <Router>
-            <Navbar />
             <Routes>
               <Route exact path='/' element={<PrivateRoute>< HomeContainer /></PrivateRoute>} />
               <Route exact path='/profile' element={<PrivateRoute>< Profile /></PrivateRoute>} />

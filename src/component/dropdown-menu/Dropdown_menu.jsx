@@ -10,6 +10,7 @@ export default function Dropdown_menu() {
     const navigate = useNavigate();
 
     const logout = () => {
+        localStorage.clear();
         navigate("/login");
     }
 

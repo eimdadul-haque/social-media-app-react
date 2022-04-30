@@ -5,6 +5,7 @@ import PostCard from "../../component/post-card/PostCard";
 import "./Profile.css"
 import { API_LINK } from "../../api/API_LINK";
 import axios from "axios";
+import Navbar from "../../component/navbar/Navbar";
 
 export default function Profile(params) {
     const [posts, setPosts] = useState([]);
@@ -22,6 +23,7 @@ export default function Profile(params) {
 
     return (
         <>
+            <Navbar />
             <div className="profile-container">
                 <img src={Img} />
                 <div className="profile-page-name ">
@@ -115,7 +117,7 @@ export default function Profile(params) {
                                 )
                             })
                         }
-                    
+
                     </div>
                 </div>
             </div>
